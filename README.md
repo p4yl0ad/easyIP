@@ -8,5 +8,3 @@ follow the prompts and make sure to open a new terminal once youre done.
 To change your ip to another , simply run the script again and select the apropriate interface.
 
 
-#TODO
-add function that uses regex and tail to remove the appended $PS1 EXPORT or utilize the ability of having $PS1 $PS2 etc
