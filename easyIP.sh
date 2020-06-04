@@ -5,10 +5,13 @@ show_menus() {
         echo "~~~~~~~~~~~~~~~~~~~~~~"
         echo " H T B - IF - M E N U "
         echo "~~~~~~~~~~~~~~~~~~~~~~"
-        echo " Make sure you have a "
-        echo " OpenVPN connection to"
-        echo " HackTheBox if using  "
-        echo "          tun0        "
+        echo " This application is designed to list your local"
+        echo " IP addresses e.g. tun0 10.10.xx.xx ."
+        echo " "
+        echo " You will then be prompted to enter the interface "
+        echo " to use. The script will append a new prompt"
+        echo " style to your terminal which contains the ip "
+        echo " as the hostname, e.g. username@10.13.12.11"
         echo ""
         echo "1. List & Select interface"
         echo "2. Exit"
@@ -27,14 +30,12 @@ read_options(){
 }
 
 interface_lister(){
-    echo "These are the interfaces you have available"
+    echo "These are the interfaces you have available to choose from"
     echo ""
     ip addr | grep brd | grep -i inet | awk '{print $NF, $2}'
     echo ""
         interface_selector
 }
-
-
 
 interface_selector(){
     read -p "Enter the interface you want to add to your bash prompt e.g. tun0 for hackthebox > " choice2
@@ -44,7 +45,6 @@ interface_selector(){
     echo ""
        bashrc_append_choice
 }
-
 
 bashrc_append_choice(){
         local choice
@@ -66,9 +66,6 @@ bashrc_add(){
 	source ~/.bashrc
 
 }
-
-
-
 
 show_menus
 read_options
