@@ -70,3 +70,6 @@ bashrc_add(){
 show_menus
 read_options
 source ~/.bashrc
+
+#TODO
+#add function that uses regex and tail to remove the appended $PS1 EXPORT or utilize the ability of having $PS1 $PS2 etc
